@@ -9,6 +9,7 @@ using Tweeter.Models;
 
 namespace Tweeter.Controllers
 {
+    [Authorize]
     public class TweetController : Controller
     {
         private TweeterDBContext db = new TweeterDBContext();

@@ -38,7 +38,7 @@ namespace Tweeter.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("TweeterDBContext", "Users", "ID", "Username", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

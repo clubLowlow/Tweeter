@@ -41,6 +41,10 @@ local.properties
 *.user
 *.sln.docstates
 
+# SQL Server files
+App_Data/*.mdf
+App_Data/*.ldf
+
 # Build results
 [Dd]ebug/
 [Rr]elease/
