@@ -42,6 +42,8 @@ local.properties
 *.sln.docstates
 
 # SQL Server files
+Tweeter/App_Data/*.mdf
+Tweeter/App_Data/*.ldf
 App_Data/*.mdf
 App_Data/*.ldf
 

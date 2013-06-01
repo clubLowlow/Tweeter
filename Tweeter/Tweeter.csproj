@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201306012002263_Initial.Designer.cs">
       <DependentUpon>201306012002263_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201306012313485_RemovePasswordFromUser.cs" />
+    <Compile Include="Migrations\201306012313485_RemovePasswordFromUser.Designer.cs">
+      <DependentUpon>201306012313485_RemovePasswordFromUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Tweet.cs" />
@@ -332,6 +336,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201306012002263_Initial.resx">
       <DependentUpon>201306012002263_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306012313485_RemovePasswordFromUser.resx">
+      <DependentUpon>201306012313485_RemovePasswordFromUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
