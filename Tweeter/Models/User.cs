@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace Tweeter.Models
 {
@@ -11,11 +12,8 @@ namespace Tweeter.Models
         public string Avatar { get; set; }
         public string About { get; set; }
         public string Name { get; set; }
+        public string Website { get; set; }
         
     }
 
-    public class UserDBContext : DbContext
-    {
-        public DbSet<User> Users { get; set; }
-    }
 }

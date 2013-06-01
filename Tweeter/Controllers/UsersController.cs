@@ -11,7 +11,7 @@ namespace Tweeter.Controllers
 {
     public class UsersController : Controller
     {
-        private UserDBContext db = new UserDBContext();
+        private TweeterDBContext db = new TweeterDBContext();
 
         //
         // GET: /Users/
