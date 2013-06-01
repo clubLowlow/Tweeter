@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Tweeter.Models.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Users";
 }
 
-<h2>Index</h2>
+<h2>Users</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,19 +12,19 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.username)
+            @Html.DisplayNameFor(model => model.Username)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.password)
+            @Html.DisplayNameFor(model => model.Password)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.avatar)
+            @Html.DisplayNameFor(model => model.Avatar)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.about)
+            @Html.DisplayNameFor(model => model.About)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th></th>
     </tr>
@@ -32,19 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.username)
+            @Html.DisplayFor(modelItem => item.Username)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.password)
+            @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.avatar)
+            @Html.DisplayFor(modelItem => item.Avatar)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.about)
+            @Html.DisplayFor(modelItem => item.About)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

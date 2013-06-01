@@ -6,11 +6,11 @@ namespace Tweeter.Models
     public class User
     {
         public int ID { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string avatar { get; set; }
-        public string about { get; set; }
-        public string name { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Avatar { get; set; }
+        public string About { get; set; }
+        public string Name { get; set; }
         
     }
 
