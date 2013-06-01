@@ -189,13 +189,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201306011823425_Initial.cs" />
-    <Compile Include="Migrations\201306011823425_Initial.Designer.cs">
-      <DependentUpon>201306011823425_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306011830162_TweetLength.cs" />
-    <Compile Include="Migrations\201306011830162_TweetLength.Designer.cs">
-      <DependentUpon>201306011830162_TweetLength.cs</DependentUpon>
+    <Compile Include="Migrations\201306012002263_Initial.cs" />
+    <Compile Include="Migrations\201306012002263_Initial.Designer.cs">
+      <DependentUpon>201306012002263_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -334,11 +330,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201306011823425_Initial.resx">
-      <DependentUpon>201306011823425_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306011830162_TweetLength.resx">
-      <DependentUpon>201306011830162_TweetLength.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201306012002263_Initial.resx">
+      <DependentUpon>201306012002263_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Tweeter.Models
 {
     public class User
     {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }

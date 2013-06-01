@@ -12,11 +12,13 @@ namespace Tweeter.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        Text = c.String(),
+                        Text = c.String(maxLength: 140),
                         CreatedAt = c.DateTime(nullable: false),
                         UserId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.Users",
@@ -36,6 +38,8 @@ namespace Tweeter.Migrations
         
         public override void Down()
         {
+            DropIndex("dbo.Tweets", new[] { "UserId" });
+            DropForeignKey("dbo.Tweets", "UserId", "dbo.Users");
             DropTable("dbo.Users");
             DropTable("dbo.Tweets");
         }
