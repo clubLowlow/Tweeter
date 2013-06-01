@@ -114,6 +114,19 @@ namespace Tweeter.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult SearchIndex(string searchString)
+        {
+            var users = from u in db.Users
+                                   select u;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(u => u.Name.Contains(searchString));
+            }
+
+            return View(users);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
