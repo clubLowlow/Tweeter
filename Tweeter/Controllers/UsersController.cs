@@ -6,16 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tweeter.Models;
+using WebMatrix.WebData;
 
 namespace Tweeter.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private TweeterDBContext db = new TweeterDBContext();
 
         //
         // GET: /Users/
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Users.ToList());
@@ -24,6 +26,7 @@ namespace Tweeter.Controllers
         //
         // GET: /Users/Details/5
 
+        [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
             User user = db.Users.Find(id);
@@ -59,11 +62,32 @@ namespace Tweeter.Controllers
             return View(user);
         }
 
+        public ActionResult EditProfile()
+        {
+            var currentUserId = WebSecurity.CurrentUserId;
+
+            if (currentUserId == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
+            {
+                return RedirectToAction("Edit", "Users", new { ID = currentUserId });
+            }
+        }
+
         //
         // GET: /Users/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
+            var currentUserId = WebSecurity.CurrentUserId;
+
+            if (id != currentUserId) 
+            {
+                throw new HttpException(403, "Forbidden");
+            }
+
             User user = db.Users.Find(id);
             if (user == null)
             {
@@ -114,6 +138,7 @@ namespace Tweeter.Controllers
             return RedirectToAction("Index");
         }
 
+        [AllowAnonymous]
         public ActionResult SearchIndex(string searchString)
         {
             var users = from u in db.Users

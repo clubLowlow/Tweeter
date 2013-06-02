@@ -3,30 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tweeter.Models;
+using WebMatrix.WebData;
 
 namespace Tweeter.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
-            return View();
+            return RedirectToAction("Index", "Tweet");
+            //return RedirectToAction("Edit", "Users", new { ID = WebSecurity.CurrentUserId });
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        
     }
 }
