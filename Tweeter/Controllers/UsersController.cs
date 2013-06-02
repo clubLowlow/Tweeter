@@ -88,7 +88,8 @@ namespace Tweeter.Controllers
                 throw new HttpException(403, "Forbidden");
             }
 
-            User user = db.Users.Find(id);
+            User user = db.Users.Include(u => u.Tweets).Single(u => u.ID == id);
+            
             if (user == null)
             {
                 return HttpNotFound();

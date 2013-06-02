@@ -17,6 +17,7 @@ namespace Tweeter.Controllers
         //
         // GET: /Tweet/
 
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Tweets.ToList());

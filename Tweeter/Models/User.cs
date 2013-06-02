@@ -2,6 +2,8 @@
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Tweeter.Models
 {
@@ -15,7 +17,7 @@ namespace Tweeter.Models
         public string About { get; set; }
         public string Name { get; set; }
         public string Website { get; set; }
-        
+        public ICollection<Tweet> Tweets { get; set; }
     }
 
 }

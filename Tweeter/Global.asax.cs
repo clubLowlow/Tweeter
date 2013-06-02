@@ -28,5 +28,7 @@ namespace Tweeter
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+
     }
 }

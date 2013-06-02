@@ -8,14 +8,12 @@ using WebMatrix.WebData;
 
 namespace Tweeter.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
 
         public ActionResult Index()
         {
             return RedirectToAction("Index", "Tweet");
-            //return RedirectToAction("Edit", "Users", new { ID = WebSecurity.CurrentUserId });
         }
 
         

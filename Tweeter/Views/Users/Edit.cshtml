@@ -61,9 +61,16 @@
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<h2>Your Tweets</h2>
+
+@if (Model.Tweets != null){
+
+    foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
+    {
+        <div>@(tweet.Text)</div> 
+    }
+
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
