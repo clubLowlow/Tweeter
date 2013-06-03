@@ -4,77 +4,73 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit Profile</h2>
+<div class="content service-three">
+    <div class="container">
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+        <h2>Edit Profile</h2>
 
-    <fieldset>
-        <legend>User</legend>
+        <hr />
 
-        @Html.HiddenFor(model => model.ID)
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Username)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Username)
-            @Html.ValidationMessageFor(model => model.Username)
-        </div>
+            <fieldset>
+                @Html.HiddenFor(model => model.ID)
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Username)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Username)
+                    @Html.ValidationMessageFor(model => model.Username)
+                </div>
         
-        <div class="editor-label">
-            @Html.LabelFor(model => model.About)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.About)
-            @Html.ValidationMessageFor(model => model.About)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.About)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.About)
+                    @Html.ValidationMessageFor(model => model.About)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Website)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Website)
-            @Html.ValidationMessageFor(model => model.Website)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Website)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Website)
+                    @Html.ValidationMessageFor(model => model.Website)
+                </div>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
+                <p>
+                    <input type="submit" value="Save" />
+                </p>
+            </fieldset>
+        }
 
-<h2>Your Tweets</h2>
+        <h2>Your Tweets</h2>
 
-@if(Model.Tweets != null){
+        <hr />
 
-    <div class="twoColumnContainer userDetails">
-       <div class="leftColumn">
-            @foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
+        @if(Model.Tweets != null){
+            
+            foreach (var item in Model.Tweets)
             {
-                <div>@(tweet.Text)</div> 
+                @Html.Partial("_TweetPartial", item);
             }
-        </div>
-        <div class="rightColumn">
-            @foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
-            {
-                <div>@(tweet.CreatedAt)</div> 
-            }
-        </div>
-    
+
+        }
+
     </div>
-
-
-}
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

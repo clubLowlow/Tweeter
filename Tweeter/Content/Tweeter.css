@@ -13,3 +13,11 @@
 .userDetails {
     width:40%;
 }
+
+td {
+    text-align:center;
+}
+
+#Text {
+    width: 70em;
+}

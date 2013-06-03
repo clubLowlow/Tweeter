@@ -23,7 +23,14 @@ namespace Tweeter
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css", "~/Content/Tweeter.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/style/bootstrap.css", 
+                                                                 "~/Content/style/style.css",
+                                                                 "~/Content/style/red.css",
+                                                                 "~/Content/style/bootstrap-responsive.css",
+                                                                 "~/Content/style/font-awesome.css",
+                                                                 "~/Content/style/prettyPhoto.css",
+                                                                 "~/Content/style/slider.css", 
+                                                                 "~/Content/Tweeter.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

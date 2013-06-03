@@ -331,6 +331,7 @@
     <Content Include="Views\Error\index.cshtml" />
     <Content Include="Views\Shared\UnauthorizedAccess.cshtml" />
     <Content Include="Views\Shared\FileNotFound.cshtml" />
+    <Content Include="Views\Shared\_TweetPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

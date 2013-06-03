@@ -4,48 +4,39 @@
     ViewBag.Title = @Html.DisplayFor(model => model.Username);
 }
 
-<h2>@Html.DisplayFor(model => model.Username)</h2>
+<div class="content service-three">
+    <div class="container">
 
-<fieldset>
-    <legend>User</legend>
+        <h2>@Html.DisplayFor(model => model.Username)</h2>
 
-    <div class="twoColumnContainer userDetails">
-        <div class="leftColumn">
-            <div>@Html.DisplayNameFor(model => model.About)</div>
-            <div>@Html.DisplayNameFor(model => model.Name)</div>
-            <div>@Html.DisplayNameFor(model => model.Website)</div>
-        </div>
-        <div class="rightColumn">
-            <div>@Html.DisplayFor(model => model.About)</div>
-            <div>@Html.DisplayFor(model => model.Name)</div>
-            <div>@Html.DisplayFor(model => model.Website)</div>
-        </div>
-    </div>
-</fieldset>
+        <fieldset>
 
-<h2>Tweets</h2>
+            <div class="twoColumnContainer userDetails">
+                <div class="leftColumn">
+                    <div>@Html.DisplayNameFor(model => model.About)</div>
+                    <div>@Html.DisplayNameFor(model => model.Name)</div>
+                    <div>@Html.DisplayNameFor(model => model.Website)</div>
+                </div>
+                <div class="rightColumn">
+                    <div>@Html.DisplayFor(model => model.About)</div>
+                    <div>@Html.DisplayFor(model => model.Name)</div>
+                    <div>@Html.DisplayFor(model => model.Website)</div>
+                </div>
+            </div>
+        </fieldset>
 
-@if(Model.Tweets != null){
+        <h2>Tweets</h2>
 
-    <div class="twoColumnContainer userDetails">
-       <div class="leftColumn">
-            @foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
+        <hr />
+
+        @if(Model.Tweets != null){
+            
+            foreach (var item in Model.Tweets)
             {
-                <div>@(tweet.Text)</div> 
+                @Html.Partial("_TweetPartial", item);
             }
-        </div>
-        <div class="rightColumn">
-            @foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
-            {
-                <div>@(tweet.CreatedAt)</div> 
-            }
-        </div>
-    
+
+        }
     </div>
+</div>
 
-
-}
-
-<p>
-    @Html.ActionLink("All Users", "SearchIndex")
-</p>

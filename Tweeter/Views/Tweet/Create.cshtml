@@ -4,28 +4,33 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Post Tweet</h2>
+<div class="content service-three">
+    <div class="container">
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    <h2>Post Tweet</h2>
 
-    <fieldset>
-        <legend>Tweet</legend>
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Text)
-            @Html.ValidationMessageFor(model => model.Text)
+            <fieldset>
+
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Text)
+                    @Html.ValidationMessageFor(model => model.Text)
+                </div>
+
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
         </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
 
 @section Scripts {

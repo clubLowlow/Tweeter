@@ -1,0 +1,14 @@
+﻿@model Tweeter.Models.Tweet
+
+<div class="service-content">
+    <h5>@Html.DisplayFor(modelItem => Model.Text)</h5>
+        <div class="twoColumnContainer userDetails">
+            <div class="leftColumn">
+                @Html.DisplayFor(modelItem => Model.CreatedBy.Username)
+            </div>
+            <div class="rightColumn">
+                @Html.DisplayFor(modelItem => Model.CreatedAt)
+            </div>
+        </div>
+</div>
+<hr />
