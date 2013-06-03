@@ -1,0 +1,15 @@
+﻿.twoColumnContainer{
+    overflow:auto;
+}
+
+.leftColumn {
+    float:left;
+}
+
+.rightColumn {
+    float:right;
+}
+
+.userDetails {
+    width:40%;
+}

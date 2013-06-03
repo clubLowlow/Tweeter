@@ -18,7 +18,7 @@
             @Html.DisplayNameFor(model => model.CreatedAt)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.CreatedBy)
         </th>
         <th></th>
     </tr>
@@ -32,12 +32,7 @@
             @Html.DisplayFor(modelItem => item.CreatedAt)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.DisplayFor(modelItem => item.CreatedBy.Username)
         </td>
     </tr>
 }

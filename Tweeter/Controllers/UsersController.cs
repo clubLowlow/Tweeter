@@ -29,7 +29,7 @@ namespace Tweeter.Controllers
         [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
-            User user = db.Users.Find(id);
+            User user = db.Users.Include(u => u.Tweets).Single(u => u.ID == id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -40,9 +40,10 @@ namespace Tweeter.Controllers
         //
         // GET: /Users/Create
 
+        [AllowAnonymous]
         public ActionResult Create()
         {
-            return View();
+            throw new HttpException(403, "Forbidden");
         }
 
         //
@@ -50,16 +51,18 @@ namespace Tweeter.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create(User user)
         {
-            if (ModelState.IsValid)
-            {
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            throw new HttpException(403, "Forbidden");
+            //if (ModelState.IsValid)
+            //{
+            //    db.Users.Add(user);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
 
-            return View(user);
+            //return View(user);
         }
 
         public ActionResult EditProfile()

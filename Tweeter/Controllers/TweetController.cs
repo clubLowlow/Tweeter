@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Tweeter.Models;
+using WebMatrix.WebData;
 
 namespace Tweeter.Controllers
 {
@@ -20,7 +21,7 @@ namespace Tweeter.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View(db.Tweets.ToList());
+            return View(db.Tweets.Include(t => t.CreatedBy).ToList());
         }
 
         //
@@ -28,12 +29,13 @@ namespace Tweeter.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Tweet tweet = db.Tweets.Find(id);
-            if (tweet == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tweet);
+            throw new HttpException(403, "Forbidden");
+            //Tweet tweet = db.Tweets.Find(id);
+            //if (tweet == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(tweet);
         }
 
         //
@@ -53,6 +55,8 @@ namespace Tweeter.Controllers
         {
             if (ModelState.IsValid)
             {
+                tweet.CreatedAt = DateTime.Now;
+                tweet.UserId = WebSecurity.CurrentUserId;
                 db.Tweets.Add(tweet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -66,12 +70,13 @@ namespace Tweeter.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Tweet tweet = db.Tweets.Find(id);
-            if (tweet == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tweet);
+            throw new HttpException(403, "Forbidden");
+            //Tweet tweet = db.Tweets.Find(id);
+            //if (tweet == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(tweet);
         }
 
         //
@@ -81,13 +86,14 @@ namespace Tweeter.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Tweet tweet)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(tweet).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(tweet);
+            throw new HttpException(403, "Forbidden");
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(tweet).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
+            //return View(tweet);
         }
 
         //
@@ -95,12 +101,13 @@ namespace Tweeter.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Tweet tweet = db.Tweets.Find(id);
-            if (tweet == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tweet);
+            throw new HttpException(403, "Forbidden");
+            //Tweet tweet = db.Tweets.Find(id);
+            //if (tweet == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(tweet);
         }
 
         //

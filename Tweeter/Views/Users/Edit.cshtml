@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Profile</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -23,14 +23,6 @@
             @Html.ValidationMessageFor(model => model.Username)
         </div>
         
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Avatar)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Avatar)
-            @Html.ValidationMessageFor(model => model.Avatar)
-        </div>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.About)
         </div>
@@ -63,12 +55,24 @@
 
 <h2>Your Tweets</h2>
 
-@if (Model.Tweets != null){
+@if(Model.Tweets != null){
 
-    foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
-    {
-        <div>@(tweet.Text)</div> 
-    }
+    <div class="twoColumnContainer userDetails">
+       <div class="leftColumn">
+            @foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
+            {
+                <div>@(tweet.Text)</div> 
+            }
+        </div>
+        <div class="rightColumn">
+            @foreach (Tweeter.Models.Tweet tweet in Model.Tweets)
+            {
+                <div>@(tweet.CreatedAt)</div> 
+            }
+        </div>
+    
+    </div>
+
 
 }
 
