@@ -20,7 +20,8 @@ namespace Tweeter.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            throw new HttpException(403, "Forbidden");
+            //return View(db.Users.ToList());
         }
 
         //
@@ -111,7 +112,7 @@ namespace Tweeter.Controllers
             {
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("SearchIndex");
             }
             return View(user);
         }
