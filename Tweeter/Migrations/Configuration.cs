@@ -67,8 +67,6 @@ namespace Tweeter.Migrations
             };
 
             tweets.ForEach(t => context.Tweets.AddOrUpdate(t));
-
-
         }
     }
 }

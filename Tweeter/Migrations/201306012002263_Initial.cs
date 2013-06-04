@@ -26,7 +26,6 @@ namespace Tweeter.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         Username = c.String(),
-                        Password = c.String(),
                         Avatar = c.String(),
                         About = c.String(),
                         Name = c.String(),

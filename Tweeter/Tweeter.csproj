@@ -194,9 +194,9 @@
     <Compile Include="Migrations\201306012002263_Initial.Designer.cs">
       <DependentUpon>201306012002263_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201306012313485_RemovePasswordFromUser.cs" />
-    <Compile Include="Migrations\201306012313485_RemovePasswordFromUser.Designer.cs">
-      <DependentUpon>201306012313485_RemovePasswordFromUser.cs</DependentUpon>
+    <Compile Include="Migrations\201306040257332_addExtra.cs" />
+    <Compile Include="Migrations\201306040257332_addExtra.Designer.cs">
+      <DependentUpon>201306040257332_addExtra.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -206,6 +206,120 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\ashok.jpg" />
+    <Content Include="Content\img\bg_direction_nav.png" />
+    <Content Include="Content\img\border-b.png" />
+    <Content Include="Content\img\border-g.png" />
+    <Content Include="Content\img\border-l.png" />
+    <Content Include="Content\img\border-o.png" />
+    <Content Include="Content\img\border-p.png" />
+    <Content Include="Content\img\border-r.png" />
+    <Content Include="Content\img\clients\amazon.png" />
+    <Content Include="Content\img\clients\facebook.png" />
+    <Content Include="Content\img\clients\google.png" />
+    <Content Include="Content\img\clients\skype.png" />
+    <Content Include="Content\img\clients\twitter.png" />
+    <Content Include="Content\img\clients\youtube.png" />
+    <Content Include="Content\img\dots.png" />
+    <Content Include="Content\img\favicon\favicon.png" />
+    <Content Include="Content\img\parallax\1.png" />
+    <Content Include="Content\img\parallax\2.png" />
+    <Content Include="Content\img\parallax\3.png" />
+    <Content Include="Content\img\parallax\4.png" />
+    <Content Include="Content\img\parallax\arrows.png" />
+    <Content Include="Content\img\photos\1.jpg" />
+    <Content Include="Content\img\photos\2.jpg" />
+    <Content Include="Content\img\photos\3.jpg" />
+    <Content Include="Content\img\photos\4.jpg" />
+    <Content Include="Content\img\photos\5.jpg" />
+    <Content Include="Content\img\photos\6.jpg" />
+    <Content Include="Content\img\photos\7.jpg" />
+    <Content Include="Content\img\photos\8.jpg" />
+    <Content Include="Content\img\photos\9.jpg" />
+    <Content Include="Content\img\photos\s1.jpg" />
+    <Content Include="Content\img\photos\s2.jpg" />
+    <Content Include="Content\img\photos\s3.jpg" />
+    <Content Include="Content\img\photos\s4.jpg" />
+    <Content Include="Content\img\photos\s5.jpg" />
+    <Content Include="Content\img\photos\site.jpg" />
+    <Content Include="Content\img\photos\tn_1.jpg" />
+    <Content Include="Content\img\photos\tn_2.jpg" />
+    <Content Include="Content\img\photos\tn_3.jpg" />
+    <Content Include="Content\img\photos\tn_4.jpg" />
+    <Content Include="Content\img\photos\tn_5.jpg" />
+    <Content Include="Content\img\photos\tn_6.jpg" />
+    <Content Include="Content\img\photos\tn_7.jpg" />
+    <Content Include="Content\img\photos\tn_8.jpg" />
+    <Content Include="Content\img\photos\tn_9.jpg" />
+    <Content Include="Content\img\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\img\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\img\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\img\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\img\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\img\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\img\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\img\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\img\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\img\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\img\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\img\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\img\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\img\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\img\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\img\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\img\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\img\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\img\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\img\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\img\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\img\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\img\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\img\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\img\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\img\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\img\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\img\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\img\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\img\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\img\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\js\bootstrap-old.js" />
+    <Content Include="Content\js\bootstrap-old1.js" />
+    <Content Include="Content\js\bootstrap-old2.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\cycle.js" />
+    <Content Include="Content\js\easing.js" />
+    <Content Include="Content\js\filter.js" />
+    <Content Include="Content\js\html5shim.js" />
+    <Content Include="Content\js\jquery.cslider.js" />
+    <Content Include="Content\js\jquery.flexslider-min.js" />
+    <Content Include="Content\js\jquery.isotope.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.prettyPhoto.js" />
+    <Content Include="Content\js\jquery.tweet.js" />
+    <Content Include="Content\js\modernizr.custom.28468.js" />
+    <Content Include="Content\style\blue.css" />
+    <Content Include="Content\style\bootstrap-responsive.css" />
+    <Content Include="Content\style\bootstrap-responsive.old.css" />
+    <Content Include="Content\style\bootstrap.css" />
+    <Content Include="Content\style\bootstrap.old.css" />
+    <Content Include="Content\style\flexslider.css" />
+    <Content Include="Content\style\font-awesome.css" />
+    <Content Include="Content\style\green.css" />
+    <Content Include="Content\style\lblue.css" />
+    <Content Include="Content\style\orange.css" />
+    <Content Include="Content\style\prettyPhoto.css" />
+    <Content Include="Content\style\purple.css" />
+    <Content Include="Content\style\red.css" />
+    <Content Include="Content\style\slider.css" />
+    <Content Include="Content\style\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -263,6 +377,11 @@
     <Content Include="Content\Tweeter.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\hoover.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -343,8 +462,8 @@
     <EmbeddedResource Include="Migrations\201306012002263_Initial.resx">
       <DependentUpon>201306012002263_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306012313485_RemovePasswordFromUser.resx">
-      <DependentUpon>201306012313485_RemovePasswordFromUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201306040257332_addExtra.resx">
+      <DependentUpon>201306040257332_addExtra.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
