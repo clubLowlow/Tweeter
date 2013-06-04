@@ -21,7 +21,7 @@ namespace Tweeter.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View(db.Tweets.Include(t => t.CreatedBy).ToList());
+            return View(db.Tweets.Include(t => t.CreatedBy).OrderByDescending(t => t.CreatedAt).ToList());
         }
 
         //
